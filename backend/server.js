@@ -7,6 +7,7 @@ const app = express();
 const port = process.env.PORT || 5000;
 const corsOptions = {
   origin: 'https://chatbot-by-burnerace.vercel.app',
+  methods: ["POST" , "GET"],
   credentials: true,
   optionsSuccessStatus: 200,
 };
