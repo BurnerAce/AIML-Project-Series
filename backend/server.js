@@ -5,11 +5,16 @@ const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 5000;
+const corsOptions = {
+  origin: 'https://one-shop-burnerace.vercel.app',
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost:27017/yourdbname', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://hanzalasharique04:%2310022004%23@cluster0.drtmsvv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Import routes
 const chatbotRoutes = require('./routes/chatbot');
