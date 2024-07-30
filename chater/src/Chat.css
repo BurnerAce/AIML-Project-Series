@@ -1,0 +1,228 @@
+body {
+  margin: 0;
+  font-family: 'Ink Free', cursive;
+  background: linear-gradient(to right, #170e6c, #e06c42, #08579c);
+  /* background: linear-gradient(to right, #3a1c71, #ff7f50, #4b0085); */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  font-family: 'Ink Free', serif;
+  color: rgb(122, 62, 12);
+}
+
+header h1 {
+  margin: 20px 0;
+}
+
+header p {
+  margin: 10px 0;
+}
+
+.logout-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #ff1744;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #ff4569;
+}
+
+.chat-container {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  width: 500px;
+  max-width: 100%;
+  height: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.dark-mode .chat-container {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.moon-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.chat-box {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+  font-family: 'Ink Free', cursive;
+}
+
+.user-message {
+  background-color: #4caf50;
+  align-self: flex-end;
+  margin-left: auto;
+  color: #fff;
+}
+
+.bot-message {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.text {
+  flex: 1;
+}
+
+.input-box {
+  display: flex;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.center-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.center-box p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.center-box button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.scrollable {
+  scrollbar-width: thin;
+  scrollbar-color: #4caf50 #fff;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: #4caf50;
+  border-radius: 10px;
+  border: 2px solid #fff;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: cyan;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: #333;
+}
+
+.popup-content p {
+  margin: 10px 0;
+}
+
+.popup-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.popup-content .cancel-button:hover {
+  background-color: darkgreen;
+}
+
+.popup-content .logout_button:hover {
+  background-color: darkred;
+}
+
+.popup-content .cancel-button {
+  background-color: green;
+  color: black;
+}
+
+.popup-content .logout_button {
+  background-color: red;
+  color: black;
+}

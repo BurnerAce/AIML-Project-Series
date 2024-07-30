@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300;400;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #170e6c, #e06c42, #08579c);
+    /* background: linear-gradient(to right, #3a1c71, #ff7f50, #4b0085); */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+.auth-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    width: 400px;
+    max-width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    font-family: 'Pacifico', cursive;
+    background: none;
+    border: none;
+    color: #333;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.tabs button.active {
+    color: #ff7f50;
+    border-bottom: 2px solid #ff7f50;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form h2 {
+    font-family: 'Pacifico', cursive;
+    color: #3a1c71;
+    margin-bottom: 20px;
+}
+
+.form input {
+    font-family: '';
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form button {
+    background-color: #3a1c71;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.form button:hover {
+    background-color: #2e1654;
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.dp-selection {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.dp-selection img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+}
+
+.dp-selection img.selected {
+    border: 2px solid #3a1c71;
+}
