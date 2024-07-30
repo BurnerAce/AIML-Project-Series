@@ -36,7 +36,7 @@ const Chat = () => {
     const username = localStorage.getItem('username');
     const loc = localStorage.getItem('location');
 
-    const response = await axios.post('http://localhost:5000/api/chat', { userId: username, loc: loc, message: input });
+    const response = await axios.post('https://aiml-project-series.vercel.app/api/chat', { userId: username, loc: loc, message: input });
     setMessages([...messages, { user: 'You', text: input }, { user: 'Bot', text: response.data.response }]);
     setInput('');
   };
