@@ -23,7 +23,12 @@ const authRoutes = require('./routes/auth');
 // Use routes
 app.use('/api', chatbotRoutes);
 app.use('/api', authRoutes);
-
+app.get('/', (req, res) => {
+  res.send('Hello World! index.js');
+});
+app.get('/api', (req, res) => {
+  res.send('Hello World!');
+});
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
