@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 5000;
 const corsOptions = {
-  origin: 'https://one-shop-burnerace.vercel.app',
+  origin: 'https://chatbot-by-burnerace.vercel.app',
   credentials: true,
   optionsSuccessStatus: 200,
 };
