@@ -13,7 +13,7 @@ const Chat = () => {
   const [logoutPopup, setLogoutPopup] = useState(false); // Added state for logout popup
   const chatBoxRef = useRef(null); // Create a ref for the chat box
   const navigate = useNavigate();
-  axios.defaults.withCredentials=true;
+  
   useEffect(() => {
     const username = localStorage.getItem('username');
     const profilePicture = localStorage.getItem('profilePicture');

@@ -20,7 +20,7 @@ const Auth = ({ onLogin }) => {
     const { name, value } = e.target;
     setSignInData({ ...signInData, [name]: value });
   };
-  axios.defaults.withCredentials=true;
+  
   const handleLoginChange = (e) => {
     const { name, value } = e.target;
     setLoginData({ ...loginData, [name]: value });
