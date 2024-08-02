@@ -1,21 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ChatPage.css';
 import { Button, Input } from '@chakra-ui/react';
+import axios from 'axios';
 
 export default function ChatPage() {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const [showLogoutPopup, setShowLogoutPopup] = useState(false);
 
-  const handleSendMessage = () => {
+  // Retrieve username from localStorage
+  useEffect(() => {
+    const username = localStorage.getItem('username');
+    if (username) {
+      setMessages([{ type: 'bot', text: `Welcome, ${username}! How can I assist you today?` }]);
+    }
+  }, []);
+
+  const handleSendMessage = async () => {
     if (inputValue.trim()) {
       setMessages([...messages, { type: 'user', text: inputValue }]);
       setInputValue('');
-      setTimeout(() => {
+
+      try {
+        const response = await axios.post('http://localhost:5000/api/chat', {
+          message: inputValue,
+        });
         setMessages((prevMessages) => [
           ...prevMessages,
-          { type: 'bot', text: 'Here is the bot response.' },
+          { type: 'bot', text: response.data.text },
         ]);
-      }, 1000);
+      } catch (error) {
+        console.log(error);
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { type: 'bot', text: 'Sorry, I could not process your request.' },
+        ]);
+      }
     }
   };
 
@@ -23,6 +43,11 @@ export default function ChatPage() {
     if (e.key === 'Enter') {
       handleSendMessage();
     }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('username');
+    window.location.href = '/';
   };
 
   return (
@@ -33,6 +58,9 @@ export default function ChatPage() {
           <p className="chat-subtext">
             Here to solve your college admission-related queries
           </p>
+          <Button className="logout-button" onClick={() => setShowLogoutPopup(true)}>
+            Logout
+          </Button>
         </div>
         <div className="chat-box">
           <div className="chat-messages">
@@ -57,11 +85,24 @@ export default function ChatPage() {
               className="chat-input"
             />
             <Button onClick={handleSendMessage} className="chat-send-button">
-              
+              ➤
             </Button>
           </div>
         </div>
       </div>
+
+      {/* Logout Confirmation Popup */}
+      {showLogoutPopup && (
+        <div className="logout-popup-overlay">
+          <div className="logout-popup">
+            <p>Are you sure you want to logout?</p>
+            <div className="logout-popup-buttons">
+              <Button onClick={() => setShowLogoutPopup(false)}>Cancel</Button>
+              <Button onClick={handleLogout}>Logout</Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
