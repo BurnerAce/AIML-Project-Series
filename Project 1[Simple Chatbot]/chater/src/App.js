@@ -22,7 +22,7 @@ const AppRoutes = () => {
 const App = () => {
   return (
     <Router>
-      <AppRoutes />
+      <AppRoutes/>
     </Router>
   );
 };
