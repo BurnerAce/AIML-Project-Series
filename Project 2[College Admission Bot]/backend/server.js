@@ -3,7 +3,6 @@ const axios = require('axios');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/auth');
-require('dotenv').config(); // To load your API keys from .env file
 
 const app = express();
 const port = process.env.PORT || 5000;
